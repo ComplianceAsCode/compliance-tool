@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compliance-tool"
+version = "0.0.1"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+[pycodestyle]
+max-line-length = 99
+
+[project.scripts]
+compliance-tool = "compliance_tool.cli:main"
