@@ -1,0 +1,27 @@
+name: Docs
+on:
+    push:
+        branches: [ 'main', '*' ]
+    pull_request:
+        branches: [ 'main', ]
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.number || github.run_id }}
+    cancel-in-progress: true
+jobs:
+    validate-docs:
+        name: Validate Docs
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+            -   name: Install Dependencies
+                run: pip install -r docs/requirements.txt build
+            -   name: Build the project
+                run: python -m build
+            -   name: Install the project
+                run: pip install dist/compliance_tool-*-py3-none-any.whl
+            -   name: Build the Docs
+                working-directory: docs
+                run: make html
+            -   name: Ensure the docs built
+                run: grep 'Sub-commands' docs/_build/html/compliance-tool.1.html
