@@ -54,7 +54,7 @@ def prepare_parsers() -> argparse.ArgumentParser:
     return parser
 
 
-def main():
+def main() -> int:
     args = prepare_parsers().parse_args()
     args.func(args)
     return 0
