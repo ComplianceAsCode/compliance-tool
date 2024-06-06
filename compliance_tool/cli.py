@@ -1,7 +1,5 @@
 import argparse
-import list
-import scan
-import remediate
+from compliance_tool import list, scan, remediate
 
 
 def prepare_parser_list(subparsers) -> None:
