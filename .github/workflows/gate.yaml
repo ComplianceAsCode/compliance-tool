@@ -1,0 +1,49 @@
+name: "Gating"
+on:
+    push:
+        branches: [ "main", "*" ]
+    pull_request:
+        branches: [ "main" ]
+
+jobs:
+    test-fedora-latest:
+        runs-on: "ubuntu-latest"
+        container:
+            image: fedora:latest
+        steps:
+            -   name: Install Dependencies
+                run: dnf install -y  python3-devel python3-setuptools
+            -   name: Checkout
+                uses: actions/checkout@v4
+            -   name: Install Python Dependencies
+                run: pip install -r requirements.txt
+            -   name: Run all tests
+                run: tox
+
+    test-fedora-rawhide:
+        runs-on: "ubuntu-latest"
+        container:
+            image: fedora:rawhide
+        steps:
+            -   name: Install Dependencies
+                run: dnf install -y  python3-devel python3-setuptools
+            -   name: Checkout
+                uses: actions/checkout@v4
+            -   name: Install Python Dependencies
+                run: pip install -r requirements.txt
+            -   name: Run all tests
+                run: tox
+
+    test-c10s:
+        runs-on: "ubuntu-latest"
+        container:
+            image: quay.io/centos/centos:stream10-development
+        steps:
+            -   name: Install Dependencies
+                run: dnf install -y  python3-devel python3-setuptools
+            -   name: Checkout
+                uses: actions/checkout@v4
+            -   name: Install Python Dependencies
+                run: pip install -r requirements.txt
+            -   name: Run all tests
+                run: tox
