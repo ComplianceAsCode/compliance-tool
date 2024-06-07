@@ -8,4 +8,3 @@ compliance-tool
    :module: compliance_tool.cli
    :func: prepare_parsers
    :prog: compliance-tool
-

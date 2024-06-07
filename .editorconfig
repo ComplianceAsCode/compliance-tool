@@ -4,9 +4,19 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-[{**.py,**.yml,**.yaml}]
+
+[**/make.bat]
+end_of_line = crlf
+
+[**.py]
+indent_size = unset
+tab_width = 4
 indent_style = space
+
+
+[{**.yml,**.yaml}]
 indent_size = 4
+indent_style = space
 
 [Makefile]
 indent_style = tab

@@ -1,0 +1,32 @@
+---
+version: "2"
+checks:
+  file-lines:
+    config:
+      threshold: 400
+
+  similar-code:
+     config:
+       languages:
+         python:
+           threshold: 40
+
+  method-complexity:
+    config:
+      threshold: 7
+
+plugins:
+  markdownlint:
+    enabled: true
+  radon:
+    enabled: true
+    config:
+        threshold: "C"
+  sonar-python:
+    enabled: true
+  shellcheck:
+    enabled: true
+  editorconfig:
+    enabled: true
+    config:
+      editorconfig: .editorconfig
