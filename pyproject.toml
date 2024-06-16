@@ -6,9 +6,15 @@ build-backend = "setuptools.build_meta"
 name = "compliance-tool"
 version = "0.0.1"
 readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: LGPL-2.1"
 ]
+
+[project.urls]
+Repository = "https://github.com/ComplianceAsCode/compliance-tool"
 
 [pycodestyle]
 max-line-length = 99

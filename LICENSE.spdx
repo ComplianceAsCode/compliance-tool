@@ -1,0 +1,6 @@
+SPDXVersion: SPDX-2.1
+Creator: Red Hat, Inc.
+PackageName: compliance-tool
+PackageOriginator: Red Hat, Inc.
+PackageHomePage: https://github.com/ComplianceAsCode/compliance-tool
+PackageLicenseDeclared: LGPL-2.1-or-later
