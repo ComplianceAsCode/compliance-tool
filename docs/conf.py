@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath('..'))
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -16,6 +21,7 @@ author = 'ComplianceAsCode'
 extensions = [
     'sphinx_rtd_theme',
     'sphinxarg.ext',
+    'sphinx.ext.autodoc',
 ]
 
 templates_path = ['_templates']
