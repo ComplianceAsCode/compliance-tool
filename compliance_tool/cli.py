@@ -56,8 +56,6 @@ def prepare_parser_remediate(cli_sub_parsers, global_parser, profile_parser) -> 
 
 def prepare_parsers() -> argparse.ArgumentParser:
     global_parser = argparse.ArgumentParser(add_help=False)
-    global_parser.add_argument("--input", metavar="SOURCE_FILE",
-                               help="policy definitions (recognized formats: SCAP Data Stream)")
     global_parser.add_argument("--tailoring", metavar="SOURCE_FILE",
                                help="policy customizations"
                                     " (recognized formats: JSON Tailoring)")
