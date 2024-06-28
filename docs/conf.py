@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'compliance-tool'
+project = 'Compliance Tool'
 copyright = '2024, ComplianceAsCode'
 author = 'ComplianceAsCode'
 
